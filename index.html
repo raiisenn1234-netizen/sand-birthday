@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sand 🎀</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  --pink:#f7b6ce;
+  --deep:#d85b8a;
+  --light:#fff7fb;
+  --white:#fff;
+  --text:#633c4d;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  font-family:"DM Sans",sans-serif; color:var(--text);
+  background:linear-gradient(135deg,#fff8fc,#ffddea);
+}
+.slide{
+  position:absolute; inset:0; display:none; overflow:auto;
+  padding:28px 18px 36px; text-align:center;
+  animation:fade .7s ease;
+}
+.slide.active{display:flex; flex-direction:column; align-items:center; justify-content:center}
+@keyframes fade{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:scale(1)}}
+
+.decor{position:fixed; pointer-events:none; font-size:28px; opacity:.8}
+.d1{top:6%;left:7%}.d2{top:12%;right:8%}.d3{bottom:8%;left:8%}.d4{bottom:12%;right:7%}
+
+h1,h2{margin:8px 0}
+.script{font-family:"Dancing Script",cursive}
+h1{font-size:clamp(46px,12vw,88px); color:var(--deep)}
+h2{font-size:clamp(28px,7vw,48px)}
+.sub{max-width:600px; line-height:1.6; margin:8px auto 22px}
+
+.card{
+  width:min(92vw,560px); padding:30px 24px; border-radius:30px;
+  background:rgba(255,255,255,.82); border:2px solid #fff;
+  box-shadow:0 20px 60px rgba(174,77,116,.16); backdrop-filter:blur(8px);
+}
+button{
+  border:0; cursor:pointer; font:inherit; font-weight:700;
+  padding:13px 22px; border-radius:999px; color:white;
+  background:linear-gradient(135deg,#df719c,#c94f7e);
+  box-shadow:0 10px 24px rgba(201,79,126,.25);
+}
+button:active{transform:scale(.97)}
+input{
+  width:min(280px,80vw); padding:14px 18px; border-radius:16px;
+  border:2px solid #f0bfd2; outline:none; text-align:center;
+  font-size:18px; text-transform:uppercase; color:var(--text);
+}
+.error{color:#c34d72; min-height:24px; margin:10px}
+
+.bow{
+  position:relative; width:180px; height:150px; margin:5px auto 18px;
+  cursor:pointer; animation:float 2.8s ease-in-out infinite;
+}
+.bow:before,.bow:after{
+  content:""; position:absolute; top:25px; width:90px; height:100px;
+  background:#f39fbe; border:6px solid #fff; border-radius:70% 25% 70% 25%;
+}
+.bow:before{left:4px;transform:rotate(28deg)}
+.bow:after{right:4px;transform:scaleX(-1) rotate(28deg)}
+.knot{position:absolute;left:65px;top:52px;width:50px;height:50px;background:#d85b8a;border:6px solid #fff;border-radius:50%;z-index:2}
+@keyframes float{50%{transform:translateY(-10px) rotate(2deg)}}
+
+.cake{
+  position:relative; width:min(330px,82vw); height:180px; margin:18px auto 10px;
+}
+.layer{position:absolute;left:5%;width:90%;height:65px;border-radius:18px;background:#fff;border:3px solid #f2bfd2;box-shadow:inset 0 -12px #ffd1df}
+.layer.top{top:70px}.layer.bottom{top:112px;height:55px;background:#fbd4e2}
+.cake-top{position:absolute;left:5%;top:55px;width:90%;height:35px;border-radius:50%;background:#fff0f6;border:3px solid #f2bfd2}
+.candles{position:absolute;top:0;left:7%;width:86%;display:flex;justify-content:space-around;align-items:flex-end;height:75px}
+.candle{width:8px;height:48px;background:#f5a7c2;border-radius:5px;position:relative}
+.flame{position:absolute;left:50%;top:-20px;transform:translateX(-50%);font-size:18px;filter:drop-shadow(0 0 6px #ffb24d)}
+.candle.off .flame{display:none}
+.candle.off{opacity:.45}
+
+.gallery{
+  width:min(940px,94vw); display:grid; grid-template-columns:repeat(2,1fr);
+  gap:12px; margin:16px auto;
+}
+.photo{
+  width:100%; height:clamp(190px,30vw,300px); object-fit:cover;
+  border:8px solid #fff; border-radius:20px; box-shadow:0 10px 25px rgba(130,65,90,.16);
+  transition:.25s;
+}
+.photo:hover{transform:rotate(-1deg) scale(1.02)}
+
+.letter{
+  width:min(720px,92vw); background:#fffdf9; padding:34px 28px;
+  border-radius:8px 28px 8px 28px; box-shadow:0 18px 50px rgba(130,65,90,.15);
+  text-align:left; line-height:1.8; font-size:17px; white-space:pre-line;
+}
+.flower{font-size:32px; margin:4px}
+.tiny{font-size:13px; opacity:.7}
+.confetti{position:fixed; inset:0; pointer-events:none; overflow:hidden}
+.piece{position:absolute;top:-20px;font-size:22px;animation:fall 2.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}.photo{height:260px}.card{padding:24px 17px}}
+</style>
+</head>
+<body>
+
+<div class="decor d1">🌷</div><div class="decor d2">🍒</div>
+<div class="decor d3">🧸</div><div class="decor d4">🎀</div>
+
+<section class="slide active" id="s1">
+  <div class="card">
+    <div class="bow" aria-label="birthday bow"><div class="knot"></div></div>
+    <div class="flower">🌷 🍒 🧸</div>
+    <h2 class="script">A little surprise for Sand...</h2>
+    <p class="sub">This bow is locked 🎀<br>Enter the secret code to unwrap the first surprise.</p>
+    <input id="code" placeholder="SECRET CODE" maxlength="7">
+    <div class="error" id="err"></div>
+    <button onclick="unlock()">Unlock the bow 🎀</button>
+    <p class="tiny">Hint: 143BRO</p>
+  </div>
+</section>
+
+<section class="slide" id="s2">
+  <div class="card">
+    <div class="flower">🌷 🧸 🎂 🧸 🌷</div>
+    <h2 class="script">Make a wish, Sand!</h2>
+    <p class="sub">There are <b>19 candles</b> waiting for you. Tap the microphone, then give the screen a little birthday blow! 🎂💨</p>
+    <div class="cake">
+      <div class="candles" id="candles"></div>
+      <div class="cake-top"></div><div class="layer top"></div><div class="layer bottom"></div>
+    </div>
+    <button id="blowBtn" onclick="startBlowing()">🎤 Blow the candles</button>
+    <button id="next2" style="display:none;margin-top:12px" onclick="go(3)">Open your memories 📸</button>
+    <p class="tiny" id="micStatus">Microphone is only used in your browser to detect the blow.</p>
+  </div>
+</section>
+
+<section class="slide" id="s3">
+  <div class="flower">🎀 🍒 🌷 🧸 🌷 🍒 🎀</div>
+  <h1 class="script">Happy Birthday Sand</h1>
+  <p class="sub">19 looks good on you! ✨🎂💗</p>
+  <div class="gallery">
+    <img class="photo" src="32112.jpg" alt="Sand memory 1">
+    <img class="photo" src="32110.jpg" alt="Sand memory 2">
+    <img class="photo" src="32109.jpg" alt="Sand memory 3">
+    <img class="photo" src="32108.jpg" alt="Sand memory 4">
+  </div>
+  <button onclick="go(4)">One last thing... 💌</button>
+</section>
+
+<section class="slide" id="s4">
+  <div class="flower">🌷🧸🎀🍒🎂🍒🎀🧸🌷</div>
+  <div class="card">
+    <h1 class="script">For Sand 💗</h1>
+    <div class="letter" id="letter">
+      WRITE YOUR PARAGRAPH HERE.
+
+      You can replace this text with the birthday paragraph you want to give her.
+      Add as many lines as you like — the card will scroll if the message is long.
+    </div>
+    <p class="script" style="font-size:28px;text-align:center;margin-bottom:0">With lots of love & chaos 🌷🧸🎀</p>
+  </div>
+</section>
+
+<div class="confetti" id="confetti"></div>
+
+<script>
+let current=1;
+const correctCode="143BRO";
+
+function go(n){
+  document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
+  document.getElementById('s'+n).classList.add('active');
+  current=n;
+  if(n===3) confetti();
+}
+
+function unlock(){
+  const val=document.getElementById('code').value.trim().toUpperCase();
+  const err=document.getElementById('err');
+  if(val===correctCode){
+    err.textContent="Unlocked! 🎀💗";
+    confetti();
+    setTimeout(()=>go(2),700);
+  }else{
+    err.textContent="Nopeee 😭 Try the hint!";
+  }
+}
+
+const candleBox=document.getElementById('candles');
+for(let i=0;i<19;i++){
+  const c=document.createElement('div');
+  c.className='candle';
+  c.innerHTML='<span class="flame">🔥</span>';
+  c.onclick=()=>{c.classList.add('off');checkCandles()};
+  candleBox.appendChild(c);
+}
+
+function checkCandles(){
+  if(document.querySelectorAll('.candle.off').length===19){
+    document.getElementById('next2').style.display='inline-block';
+    document.getElementById('blowBtn').style.display='none';
+    document.getElementById('micStatus').textContent='All 19 candles are out! Make your wish! ✨';
+    confetti();
+  }
+}
+
+function blowAll(){
+  document.querySelectorAll('.candle').forEach(c=>c.classList.add('off'));
+  checkCandles();
+}
+
+async function startBlowing(){
+  const status=document.getElementById('micStatus');
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    const ctx=new (window.AudioContext||window.webkitAudioContext)();
+    const source=ctx.createMediaStreamSource(stream);
+    const analyser=ctx.createAnalyser();
+    analyser.fftSize=512;
+    source.connect(analyser);
+    const data=new Uint8Array(analyser.fftSize);
+    status.textContent='Now blow toward your microphone! 💨';
+    const started=Date.now();
+
+    function listen(){
+      analyser.getByteTimeDomainData(data);
+      let sum=0;
+      for(let i=0;i<data.length;i++){
+        const x=(data[i]-128)/128;
+        sum+=x*x;
+      }
+      const rms=Math.sqrt(sum/data.length);
+      if(rms>0.12){
+        stream.getTracks().forEach(t=>t.stop());
+        ctx.close();
+        blowAll();
+        return;
+      }
+      if(Date.now()-started>15000){
+        stream.getTracks().forEach(t=>t.stop());
+        ctx.close();
+        status.textContent='If the mic did not catch the blow, tap the 19 candles one by one. 💗';
+        return;
+      }
+      requestAnimationFrame(listen);
+    }
+    listen();
+  }catch(e){
+    status.textContent='Microphone permission was unavailable. You can tap the candles to blow them out. 💗';
+  }
+}
+
+function confetti(){
+  const box=document.getElementById('confetti');
+  const emojis=['💗','🌷','🍒','🎀','✨','🧸'];
+  for(let i=0;i<35;i++){
+    const p=document.createElement('span');
+    p.className='piece';
+    p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDelay=Math.random()*0.8+'s';
+    box.appendChild(p);
+    setTimeout(()=>p.remove(),3500);
+  }
+}
+</script>
+</body>
+</html>
